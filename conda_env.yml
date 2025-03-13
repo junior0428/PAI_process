@@ -1,0 +1,11 @@
+name: feature-matching
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - PyQt6
+      - pyqt6-tools
+      - opencv-python
