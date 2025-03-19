@@ -72,17 +72,17 @@ class TabD3(QWidget):
         self.labelA = QLabel("Imagen A")
         self.labelA.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.labelA.setStyleSheet("border: 1px solid gray;")
-        self.labelA.setMinimumSize(600, 400)
+        self.labelA.setMinimumSize(500, 300)
 
         self.labelB = QLabel("Imagen B")
         self.labelB.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.labelB.setStyleSheet("border: 1px solid gray;")
-        self.labelB.setMinimumSize(600, 400)
+        self.labelB.setMinimumSize(500, 300)
 
         self.labelResult = QLabel("Resultado")
         self.labelResult.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.labelResult.setStyleSheet("border: 1px solid gray;")
-        self.labelResult.setMinimumSize(700, 500)
+        self.labelResult.setMinimumSize(600, 400)
 
         right_top_layout = QHBoxLayout()
         right_top_layout.addWidget(self.labelA)

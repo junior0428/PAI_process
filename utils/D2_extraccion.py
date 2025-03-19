@@ -37,7 +37,7 @@ class TabD2(QWidget):
         # Parámetros SIFT
         self.spin_sift_nfeatures = QSpinBox()
         self.spin_sift_nfeatures.setRange(1, 20000)
-        self.spin_sift_nfeatures.setValue(5000)
+        self.spin_sift_nfeatures.setValue(500)
 
         self.spin_sift_octaves = QSpinBox()
         self.spin_sift_octaves.setRange(1, 10)

@@ -40,7 +40,7 @@ class TabD9(QWidget):
 
         self.spin_minLine = QSpinBox()
         self.spin_minLine.setRange(1, 500)
-        self.spin_minLine.setValue(50)
+        self.spin_minLine.setValue(30)
 
         self.spin_maxGap = QSpinBox()
         self.spin_maxGap.setRange(1, 200)
@@ -77,12 +77,12 @@ class TabD9(QWidget):
         self.labelA = QLabel("Imagen A (líneas)")
         self.labelA.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.labelA.setStyleSheet("border: 1px solid gray;")
-        self.labelA.setMinimumSize(600, 400)
+        self.labelA.setMinimumSize(500, 300)
 
         self.labelB = QLabel("Imagen B (líneas)")
         self.labelB.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.labelB.setStyleSheet("border: 1px solid gray;")
-        self.labelB.setMinimumSize(600, 400)
+        self.labelB.setMinimumSize(500, 300)
 
         self.labelResult = QLabel("Resultado Matching Líneas")
         self.labelResult.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -162,7 +162,8 @@ class TabD9(QWidget):
         maxG = self.spin_maxGap.value()
 
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        edges = cv2.Canny(gray, c1, c2)
+        blurred = cv2.GaussianBlur(gray, (5, 5), 1.4)
+        edges = cv2.Canny(blurred, c1, c2)
         lines = cv2.HoughLinesP(
             edges, 1, np.pi / 180, 80, minLineLength=minL, maxLineGap=maxG
         )
